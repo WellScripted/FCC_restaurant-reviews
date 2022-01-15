@@ -19,7 +19,7 @@ export default class ReviewsDAO {
         try {
             const reviewDoc = {
                 name: user.name,
-                user_id: user_id,
+                user_id: user._id,
                 date: date,
                 text: review,
                 restaurant_id: ObjectId(restaurantId),
@@ -49,7 +49,7 @@ export default class ReviewsDAO {
     static async deleteReview(reviewId, userId) {
 
         try {
-            const deleteResponse = await review.deleteOne({
+            const deleteResponse = await reviews.deleteOne({
                 _id: ObjectId(reviewId),
                 user_id: userId,
             })
