@@ -45,10 +45,34 @@ function App() {
         </div>
       </nav>
 
-      {/* Create Routes for the pages -- 1:18:00 in FCC Video */}
+      {/* Routes Created */}
       <div className="container mt-3">
         <Switch>
-
+          <Route exact path={["/", "/restaurants"]} component={RestaurantsList} />
+          <Route
+            path="/restaurants/:id/review"
+            render={(props) => (
+              <AddReview {...props} user={user} />
+            )}
+          />
+          <Route
+            path="/restaurants/:id"
+            render={(props) => (
+              <Restaurant {...props} user={user} />
+            )}
+          />
+          <Route
+            path="/restaurants/:id"
+            render={(props) => (
+              <Restaurant {...props} user={user} />
+            )}
+          />
+          <Route
+            path="/login"
+            render={(props) => (
+              <Login {...props} login={login} />
+            )}
+          />
         </Switch>
       </div>
 
