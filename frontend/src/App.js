@@ -23,13 +23,16 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <nav class="navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="/restaurants">Restaurant Reviews</a>
-
+    <div>
+      <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <a href="/restaurants" className="navbar-brand">
+          Restaurant Reviews
+        </a>
         <div className="navbar-nav mr-auto">
-          <li class="nav-item">
-            <Link to={"/restaurants"} class="nav-link">Restaurants</Link>
+          <li className="nav-item">
+            <Link to={"/restaurants"} className="nav-link">
+              Restaurants
+            </Link>
           </li>
           <li className="nav-item" >
             {user ? (
@@ -41,11 +44,11 @@ function App() {
                 Login
               </Link>
             )}
+
           </li>
         </div>
       </nav>
 
-      {/* Routes Created */}
       <div className="container mt-3">
         <Switch>
           <Route exact path={["/", "/restaurants"]} component={RestaurantsList} />
@@ -62,12 +65,6 @@ function App() {
             )}
           />
           <Route
-            path="/restaurants/:id"
-            render={(props) => (
-              <Restaurant {...props} user={user} />
-            )}
-          />
-          <Route
             path="/login"
             render={(props) => (
               <Login {...props} login={login} />
@@ -75,7 +72,6 @@ function App() {
           />
         </Switch>
       </div>
-
     </div>
   );
 }
