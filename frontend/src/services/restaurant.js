@@ -1,5 +1,33 @@
 import http from "../http-common";
 
 class RestaurantDataService {
-    /* Functions for the API calls from MongoDB -- 1:27.02*/
+    getAll(page = 0) {
+        return http.get(`?page=${page}`);
+    }
+
+    get(id) {
+        return http.get(`/id/${id}`);
+    }
+
+    find(query, by = "name", page = 0) {
+        return http.get(`?${by}=${query}&page=${page}`);
+    }
+
+    createReview(data) {
+        return http.get(`?${by}=${query}&page=${page}`);
+    }
+
+    updateReview(data) {
+        return http.put("/review", data);
+    }
+
+    deleteReview(id) {
+        return http.delete(`/review?id=${id}`);
+    }
+
+    getCuisines(id) {
+        return http.get(`/cuisines`);
+    }
 }
+
+export default new RestaurantDataService();
