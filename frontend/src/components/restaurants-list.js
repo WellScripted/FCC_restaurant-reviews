@@ -120,7 +120,7 @@ const RestaurantsList = props => {
                         <button
                             className="btn btn-outline-secondary"
                             type="button"
-                        //onClick={findByZip}
+                        //onClick={findByZip} //compiles with errors
                         >
                             Search
                         </button>
