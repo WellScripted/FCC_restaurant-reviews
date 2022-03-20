@@ -73,19 +73,17 @@ const RestaurantsList = props => {
         find(searchName, "name")
     };
 
+    const findByZip = () => {
+        find(searchZip, "zipcode")
+    };
+
     const findByCuisine = () => {
-        if (searchCuisine == "All Cuisines") {
+        if (searchCuisine === "All Cuisines") {
             refreshList();
         } else {
             find(searchCuisine, "cuisine")
         }
     };
-
-
-
-
-
-
     /* Create HTML (Bootstrap) -- FCC Video @ 1:34:00 */
     return (
         <div>
@@ -120,7 +118,7 @@ const RestaurantsList = props => {
                         <button
                             className="btn btn-outline-secondary"
                             type="button"
-                        //onClick={findByZip} //compiles with errors
+                            onClick={findByZip}
                         >
                             Search
                         </button>
@@ -163,7 +161,7 @@ const RestaurantsList = props => {
                                         <Link to={"/restaurants/" + restaurant._id} className="btn btn-primary col-lg-5 mx-1 mb-1">
                                             View Reviews
                                         </Link>
-                                        <a target="_blank" href={"https://www.google.com/maps/place/" + address} className="btn btn-primary col-lg-5 mx-1 mb-1">View Map</a>
+                                        <a target="_blank" rel="noreferrer" href={"https://www.google.com/maps/place/" + address} className="btn btn-primary col-lg-5 mx-1 mb-1">View Map</a>
                                     </div>
                                 </div>
                             </div>
